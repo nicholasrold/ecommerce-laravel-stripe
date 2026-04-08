@@ -5,7 +5,8 @@
 
 @layer base {
     body {
-        font-family: 'Inter', sans-serif; /* Pastikan install font atau gunakan sans standar */
+        /* Ensure font is installed or use standard sans-serif fallback */
+        font-family: 'Inter', sans-serif;
     }
 }
 
@@ -14,7 +15,7 @@
     -webkit-text-stroke: 1px white;
 }
 
-/* Animasi Banner Atas Lebih Lambat */
+/* Slower Top Banner Animation */
 @keyframes marquee-slow {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -22,10 +23,11 @@
 
 .animate-marquee-slow {
     display: inline-block;
-    animation: marquee-slow 40s linear infinite; /* 40 detik biar ga pusing */
+    /* 40 seconds duration for a smoother, non-distracting pace */
+    animation: marquee-slow 40s linear infinite; 
 }
 
-/* Efek Zoom-In Background */
+/* Background Zoom-In Effect */
 .bg-slide {
     transform: scale(1.1);
     transition: transform 6s ease-out, opacity 1.5s ease-in-out;
@@ -39,8 +41,6 @@
 .bg-slide.inactive {
     opacity: 0;
 }
-
-
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

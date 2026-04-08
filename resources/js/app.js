@@ -22,24 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeSlide = current % 2 === 0 ? slide1 : slide2;
         const nextSlide = current % 2 === 0 ? slide2 : slide1;
 
-        // Load gambar berikutnya ke slide yang sedang tidak aktif
+        // Load the next image onto the inactive slide
         nextSlide.style.backgroundImage = `url('${images[nextIndex]}')`;
         
-        // Reset scale untuk animasi zoom ulang
+        // Reset scale for the zoom animation loop
         nextSlide.style.transform = 'scale(1.2)';
         
         setTimeout(() => {
-            // Jalankan transisi
+            // Execute transition
             nextSlide.style.opacity = '1';
-            nextSlide.style.transform = 'scale(1)'; // Zoom in ke 1
+            nextSlide.style.transform = 'scale(1)'; // Zoom in to original scale
             activeSlide.style.opacity = '0';
         }, 50);
 
         current++;
     }
 
-    // Ganti setiap 6 detik (lebih tenang)
+    // Change background every 6 seconds (calmer pace)
     setInterval(changeBG, 6000);
-
-    
 });
