@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Inter', sans-serif; /* Pastikan install font atau gunakan sans standar */
+    }
+}
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+/* Animasi Banner Atas Lebih Lambat */
+@keyframes marquee-slow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-slow {
+    display: inline-block;
+    animation: marquee-slow 40s linear infinite; /* 40 detik biar ga pusing */
+}
+
+/* Efek Zoom-In Background */
+.bg-slide {
+    transform: scale(1.1);
+    transition: transform 6s ease-out, opacity 1.5s ease-in-out;
+}
+
+.bg-slide.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.bg-slide.inactive {
+    opacity: 0;
+}
+
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
