@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// Tambahkan Hash agar password otomatis terenkripsi (Laravel 11+)
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -22,7 +21,6 @@ class Admin extends Authenticatable
         'remember_token',
     ];
 
-    // Jika kamu pakai Laravel 11, tambahkan ini agar password otomatis di-hash
     protected function casts(): array
     {
         return [

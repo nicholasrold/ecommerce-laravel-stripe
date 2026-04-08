@@ -26,7 +26,6 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    // Relasi ke tabel detail barang
     public function items(): HasMany
     {
         return $this->hasMany(OrderItem::class);

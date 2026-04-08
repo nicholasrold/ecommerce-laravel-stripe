@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    // Supaya bisa simpan data lewat create()
     protected $fillable = ['user_id', 'receiver_name', 'phone_number', 'label', 'province', 'city', 'address_detail'];
 
     public function user()

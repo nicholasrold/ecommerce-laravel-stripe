@@ -11,12 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // 1. Pengecualian CSRF untuk Stripe
+        // 1. CSRF Exemption for Stripe Webhooks
+        // Stripe cannot send a CSRF token, so we exclude this route.
         $middleware->validateCsrfTokens(except: [
             'webhook/stripe', 
         ]);
 
-        // 2. TAMBAHKAN INI: Redirect otomatis jika belum login admin
+        // 2. Default Guest Redirection
+        // Automatically redirect unauthenticated users to the admin login route.
         $middleware->redirectGuestsTo(fn () => route('admin.login'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
