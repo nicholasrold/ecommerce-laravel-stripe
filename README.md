@@ -1,59 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# GREED – Premium Streetwear E-commerce 🚀
 
+[![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+
+**GREED** is a high-end digital streetwear store built with a focus on premium UI/UX, seamless checkout experience, and a Web3-inspired aesthetic. This project utilizes the Laravel framework and Stripe's secure payment ecosystem.
+
+---
+
+## ✨ Key Features
+
+* **Premium Web3 Aesthetic:** Minimalist and high-end interface inspired by Stripe.com.
+* **Stripe Integration:** Secure checkout process supporting IDR currency.
+* **Dynamic Cart System:** Real-time cart management using Laravel sessions.
+* **Dual Checkout Flow:** Supports both "Direct Checkout" (Buy Now) and "Cart-based Checkout."
+* **Multi-Address System:** Users can save multiple shipping addresses (Default & Secondary).
+* **Admin Logistics Panel:** Comprehensive dashboard for inventory and order monitoring.
+* **Smooth UX:** Integrated with modern scrolling and animation libraries for a premium feel.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** Laravel (Eloquent ORM, Controllers, Migrations)
+* **Frontend:** Blade Templates, Tailwind CSS
+* **Payments:** Stripe API (Checkout Session)
+* **Animations:** GSAP, ScrollTrigger, & Lenis Scroll
+* **Database:** MySQL with scalable modular structure
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+* PHP >= 8.x
+* Composer
+* MySQL
+* Stripe Account (API Keys)
+
+### Installation
+1.  **Clone the repo:**
+    ```bash
+    git clone [https://github.com/nicholasrold/ecommerce-laravel.git](https://github.com/nicholasrold/ecommerce-laravel.git)
+    cd ecommerce-laravel
+    ```
+2.  **Install dependencies:**
+    ```bash
+    composer install
+    npm install && npm run build
+    ```
+3.  **Environment Setup:**
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+4.  **Configure Database & Stripe:**
+    Edit `.env` and fill in your DB credentials and Stripe Secret Keys:
+    ```env
+    STRIPE_KEY=your_public_key
+    STRIPE_SECRET=your_secret_key
+    ```
+5.  **Run Migrations & Seeders:**
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+6.  **Launch:**
+    ```bash
+    php artisan serve
+    ```
+
+---
+
+## 📦 Project Structure
+* `app/Http/Controllers/CheckoutController.php` - Core logic for Stripe & Order processing.
+* `app/Models/Order.php` - Data structure for user transactions.
+* `resources/views/catalog.blade.php` - Premium product listing.
+
+---
+
+## 🛡️ License
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  Developed with ❤️ by <b>Nicholas Rolando Victor</b> - <a href="https://github.com/nicholasrold">Verusa Design</a>
 </p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
